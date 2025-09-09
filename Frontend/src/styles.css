@@ -1,1 +1,74 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+* {
+  padding: 0px;
+  margin: 0px;
+}
+html {
+  overflow-x: hidden !important;
+}
+:root {
+  --primary-color: #a6170a;
+  --second-color: #d95204;
+  --netural-color: #d98b48;
+  --static-color: #618c03;
+  --hover-color: #2c4001;
+}
+header {
+  background-color: var(--second-color);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 10px 10px !important;
+}
+h1 {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(3rem, 6vw, 8rem);
+  /* font-size: 8rem; */
+}
+h2 {
+  font-size: clamp(1.7rem, 4.25vw, 3rem);
+}
+h3 {
+  font-size: clamp(1.4rem, 3.5vw, 2.5rem);
+}
+h4 {
+  font-size: clamp(1.2rem, 3vw, 2.1rem);
+}
+h5 {
+  font-size: clamp(1rem, 2.5vw, 1.75rem);
+}
+h6 {
+  font-size: clamp(0.84rem, 2vw, 1.45rem);
+}
+p {
+  font-size: clamp(0.72rem, 1.8vw, 1.25rem);
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bebas Neue", sans-serif !important;
+}
+p {
+  font-family: "Lato", sans-serif;
+}
+button {
+  color: white;
+  transition: 0.5s all ease-in-out;
+  font-family: "Lato", sans-serif;
+  padding: 8px 20px !important;
+  background-color: var(--static-color);
+  margin: 10px 10px !important;
+  font-size: clamp(0.6rem, 2vw, 1.5rem);
+  border-radius: 30px;
+}
+button:hover {
+  transform: translateY(-5px);
+  background-color: var(--hover-color);
+}

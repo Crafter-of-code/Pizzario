@@ -1,0 +1,37 @@
+<header class="flex justify-between items-center h-fit flex-wrap">
+  <a routerLink="/home">
+    <div class="w-fit h-fit">
+      <img
+        src="../../../assets/Site Logo/Pizzario-new-logo-svg.svg"
+        alt="Pizzario-logo"
+        width="150"
+      />
+    </div>
+  </a>
+
+  <nav class="flex-2">
+    <ul class="flex justify-center">
+      <li class="mr-2">
+        <a
+          routerLink="/"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <p>Home</p>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/menu" routerLinkActive="active-link">
+          <p>Menu</p>
+        </a>
+      </li>
+      <li>
+        <a routerLink="orders" routerLinkActive="active-link">
+          <p>Order</p>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <a routerLink="/"><button>Logout</button></a>
+</header>
