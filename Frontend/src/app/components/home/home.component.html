@@ -1,4 +1,72 @@
-<app-header />
-<router-outlet />
-<p>home works!</p>
-<app-footer />
+<!-- <h1>Home page</h1> -->
+<main class="h-fit">
+  <!--Hero section-->
+  <div
+    class="h-screen w-[100vw] hero-bg-image flex justify-center items-center"
+  >
+    <h1 class="text-white text-center">Best Pizza Show in delhi</h1>
+  </div>
+  <!-- First introduction -->
+  <div class="bg-[#a6170a] m-0 flex items-center flex-col">
+    <h2 class="text-center text-white pt-20">
+      Welcome to The Pizza Show – Delhi!
+    </h2>
+    <div class="w-[70%] text-center mt-5 mb-20">
+      <p class="text-white">
+        <strong>Delhi’s Ultimate Celebration of All Things Pizza!</strong>
+      </p>
+      <br />
+      <p class="text-white">
+        Get ready to bite into a world of cheesy indulgence, saucy stories, and
+        crusty creativity at The Pizza Show, the capital’s first and biggest
+        pizza-centric experience! Whether you're a die-hard pepperoni fan or
+        swear by Neapolitan classics, this event is a must-visit for foodies,
+        families, and pizza lovers alike.
+      </p>
+      <br />
+      <p class="text-white">
+        From live pizza-making demos by international chefs to tasting counters,
+        pizza-eating contests, and exclusive pop-ups by Delhi’s top pizzerias —
+        it’s more than a show, it’s a full-blown festival.
+      </p>
+    </div>
+  </div>
+  <!--Pod section-->
+  <div class="pt-[6%] pb-[6%] pr-[2%] pl-[2%]">
+    <h2 class="text-[#a6170a] text-center mb-5 font-bold">
+      What's Hot This Year?
+    </h2>
+    <div
+      class="flex flex-wrap justify-center max-sm:flex-col max-sm:items-center"
+    >
+      <div
+        *ngFor="let detail of pod_detail"
+        class="w-[50%] p-6 bg-[#618c03] max-sm:w-[100%] mt-1 mb-1 border-l-3"
+      >
+        <h3 class="text-center text-white">{{ detail.name }}</h3>
+        <p class="text-center text-white">{{ detail.discription }}</p>
+      </div>
+    </div>
+  </div>
+  <!--Usp section-->
+  <div class="usp_main_container pt-[6%] pb-[6%] pr-[2%] pl-[2%] bg-[#618c03]">
+    <!--usp heading-->
+    <div>
+      <h2 class="text-center text-white mb-5">
+        Why Pizzario is the Pizza Place Delhi Loves
+      </h2>
+    </div>
+    <!--ups data-->
+    <div
+      class="flex flex-wrap justify-center max-sm:flex-col max-sm:items-center"
+    >
+      <div
+        *ngFor="let detail of usp_detail; let i = index"
+        class="w-[50%] p-10 max-sm:w-[100%] mt-1 mb-1 border-l-3 bg-white"
+      >
+        <h5 class="text-[#618c03] text-center">{{ detail.name }}</h5>
+        <!-- <div>{{ detail.name }} {{ i + 1 }}</div> -->
+      </div>
+    </div>
+  </div>
+</main>

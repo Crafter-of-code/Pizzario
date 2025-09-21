@@ -1,0 +1,10 @@
+.hero-bg-image {
+  background-image: url("../../../assets/HomePageImages/ivan-torres-MQUqbmszGGM-unsplash\ \(1\).jpg");
+  background-position: center;
+}
+.even-color {
+  background-color: var(--hover-color);
+}
+.wide-width {
+  margin: 1rem 2rem;
+}

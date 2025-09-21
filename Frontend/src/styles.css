@@ -1,8 +1,8 @@
 @import "tailwindcss";
-* {
+/* * {
   padding: 0px;
   margin: 0px;
-}
+} */
 html {
   overflow-x: hidden !important;
 }
@@ -16,7 +16,7 @@ html {
 header {
   background-color: var(--second-color);
 }
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -24,7 +24,7 @@ h5,
 h6,
 p {
   margin: 10px 10px !important;
-}
+} */
 h1 {
   font-family: "Anton", sans-serif;
   font-size: clamp(3rem, 6vw, 8rem);
@@ -32,6 +32,7 @@ h1 {
 }
 h2 {
   font-size: clamp(1.7rem, 4.25vw, 3rem);
+  font-weight: 500;
 }
 h3 {
   font-size: clamp(1.4rem, 3.5vw, 2.5rem);
@@ -70,5 +71,12 @@ button {
 }
 button:hover {
   transform: translateY(-5px);
+  background-color: var(--hover-color);
+}
+header {
+  padding: 1rem 2rem;
+}
+footer {
+  padding: 1rem 2rem;
   background-color: var(--hover-color);
 }
