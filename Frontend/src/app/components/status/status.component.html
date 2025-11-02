@@ -1,0 +1,8 @@
+<div class="status_container m-3">
+  <div *ngIf="value.status; else falseValue" class="text-green-400">
+    <p class="font-bold">{{ value.message }}</p>
+  </div>
+  <ng-template #falseValue>
+    <p class="text-red-400 font-bold">{{ value.message }}</p>
+  </ng-template>
+</div>

@@ -1,16 +1,24 @@
-import { Component } from '@angular/core';
-import { HeaderComponent } from '../header/header.component';
-import { FooterComponent } from '../footer/footer.component';
-import { RouterOutlet } from '@angular/router';
-import { NgFor } from '@angular/common';
-
+import { Component, NgModule, OnInit } from '@angular/core';
+import { CommonModule, NgFor } from '@angular/common';
+import { PizzarioService } from '../../services/pizzario.service';
+import { StatusComponent } from '../status/status.component';
+interface home_page_data_Structure {
+  h1: string | any;
+  afterHeroSectionH2: string;
+}
 @Component({
   selector: 'app-home',
-  imports: [NgFor],
+  imports: [NgFor, CommonModule, StatusComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
+  status_value: {
+    message: string;
+    status: boolean;
+  } = { message: '', status: false };
+  home_page_data: home_page_data_Structure | any = { h1: '' };
+  constructor(private service: PizzarioService) {}
   pod_detail: { name: string; discription: string }[] = [
     {
       name: 'Artisan Pizza Village',
@@ -44,4 +52,24 @@ export class HomeComponent {
       name: 'Fast, Friendly & Always Fresh',
     },
   ];
+  ngOnInit() {
+    this.service.getHomeData().subscribe({
+      next: (data) => {
+        this.status_value = {
+          message: 'Fetched Data success fully',
+          status: true,
+        };
+        console.log(data);
+        this.home_page_data = data;
+        console.log(this.home_page_data.h1);
+      },
+      error: (err) => {
+        this.status_value = { message: 'Server is not working', status: false };
+        console.error(err);
+      },
+      complete: () => {
+        console.log('Fetch request is complete ');
+      },
+    });
+  }
 }
